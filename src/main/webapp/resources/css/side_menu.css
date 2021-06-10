@@ -1,0 +1,140 @@
+body {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+input[id*="answer"] {
+	display: none;
+}
+input[id*="answer"] + label {
+	display: block;
+	padding: 20px;
+	border-bottom: 0;
+	color: white;
+	font-weight:400;
+	background: #1f1e33;
+	cursor: pointer;
+	position: relative;
+	border: 2px solid #272540;
+	border-bottom: 2px solid #191829;
+}
+input[id*="answer"] + label em {
+	position:absolute;
+	top:50%;
+	right: 20px;
+	width:15px;
+	height:15px;
+	margin-top:-8px;
+	display:inline-block;
+	background-image: url('./images/down.png');
+	background-size: 100%;
+	filter: invert(1);
+}
+input[id*="answer"] + label + div {
+	max-height: 0;
+	transition: all .35s;
+	overflow:hidden;
+	background:#141321;
+	font-size:15px;
+}
+input[id*="answer"] + label + div a {
+	display: inline-block;
+    padding: 20px;
+    padding-left: 51px;
+    height: 12px;
+    width: 210px;
+    text-align: left;
+}
+
+input[id*="answer"]:checked + label + div {
+	max-height: 270px;
+}
+
+input[id*="answer"]:checked + label em {
+	background-image: url('./images/up.png');
+}
+
+.menu01, .menu02 {
+	display: block;
+	text-align: center;
+}
+
+.menu01 > .current, .menu02 > .current {
+	background: #0d0c15;
+	color: red;
+}
+
+.menu01 > a:hover, .menu02 > a:hover {
+	color: red;
+}
+
+#left_side_wrap {
+	width: 280px;
+	height: 100%;
+	background-color: #141321;
+	position: fixed;
+	border-right: 2px solid #100f1a;
+}
+
+.logo {
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	border: 2px solid #100f1a;
+}
+
+.user_menu > .profile {
+	height: 60px;
+	width: 60px;
+	border-radius: 30%;
+	overflow: hidden;
+	float: left;
+	margin-top: -20px;
+}
+
+.user_menu > .profile > img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	filter: invert(1);
+}
+
+.user_menu {
+	padding-left: 30px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #1f1e33;
+	border-bottom: 2px solid #191829;
+}
+
+.user_menu > button {
+	color: #777777;
+	font-weight: 600;
+	background-color: white;
+	width: 60px;
+	height: 23px;
+	border: 2px solid #cccccc;
+	cursor: pointer;
+	font-size: 10px;
+	margin-left: 10px;
+	border-radius: 10%;
+}
+
+.user_menu > button:hover {
+	color: red;
+}
+
+.user_menu > span {
+	padding-left: 25px;
+	color: white;
+	font-size: 14px;
+}
+
+.underline {
+	color: white;
+	text-decoration: none;
+}
+.underline:hover {
+	text-decoration: none;
+}

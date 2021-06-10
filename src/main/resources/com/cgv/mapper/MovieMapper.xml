@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.MovieMapper">
+	<insert id="insertMovie" useGeneratedKeys="true" keyProperty="cmi_seq">
+		INSERT INTO cm_information (
+			cmi_name,
+			cmi_sub_name,
+			cmi_content,
+			cmi_country,
+			cmi_type,
+			cmi_runningtime,
+			cmi_open_date,
+			cmi_screen,
+			cmi_grade
+		)
+		VALUES (
+			#{cmi_name},
+			#{cmi_sub_name},
+			#{cmi_content},
+			#{cmi_country},
+			#{cmi_type},
+			#{cmi_runningtime},
+			#{cmi_open_date},
+			#{cmi_screen},
+			#{cmi_grade}
+		)
+	</insert>
+	
+	<select id="selectMovieCntByName" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM cm_information
+		WHERE cmi_name=#{cmi_name}
+	</select>
+	
+	<select id="selectMovieList" resultType="com.cgv.vo.MovieVO">
+		SELECT *
+		FROM cm_information
+	</select>
+	
+	<select id="selectMovieBySeq" resultType="com.cgv.vo.MovieVO">
+        SELECT * FROM cm_information
+        WHERE cmi_seq=#{no} 
+    </select>
+    
+    <update id="updateMovie">
+    	UPDATE cm_information
+    	SET cmi_name=#{cmi_name},
+			cmi_sub_name=#{cmi_sub_name},
+			cmi_content=#{cmi_content},
+			cmi_country=#{cmi_country},
+			cmi_type=#{cmi_type},
+			cmi_runningtime=#{cmi_runningtime},
+			cmi_open_date=#{cmi_open_date},
+			cmi_screen=#{cmi_screen},
+			cmi_grade=#{cmi_grade}
+		WHERE cmi_seq=#{cmi_seq}
+    </update>
+    
+    <delete id="deleteMovie">
+    	DELETE FROM cm_information
+    	WHERE cmi_seq = #{cmi_seq}
+    </delete>
+    
+</mapper>

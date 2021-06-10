@@ -1,0 +1,354 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: #fdfcf0;
+}
+
+#right_wrap {
+	background-color: #fdfcf0;
+	padding-bottom: 70px;
+}
+
+.inside_wrap {
+	width: 80%;
+    padding-left: 350px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    display: inline-block;
+    padding-right: 31px;
+    background-color: white;
+}
+
+.inside_wrap > p:nth-child(1) {
+	float: left;
+	font-size: 35px;
+	font-weight: 700;
+	color: #333333;
+	border-left: 4px solid #cc1a10;
+	padding-left: 10px;
+	width: 100%;
+}
+
+.inside_wrap > p:nth-child(2) {
+	float: left;
+	color: #4e4e4e;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.content_wrap {
+	border: 1px solid #d0d0d0;
+	margin-top: 100px;
+    padding: 35px;
+    background-color: #fdfcf0;
+}
+
+.image_area {
+	float: left;
+}
+
+.title_area {
+	margin-left: 280px;
+	font-size: 14px;
+}
+
+.title_area > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 108px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.title_area > div {
+	margin-left: 145px;
+	padding: 10px;
+	color: #333;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+}
+
+.sub_title_area {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.sub_title_area > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 92px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.sub_title_area > div {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.open_date {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.open_date > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 96px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.open_date > div {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.country_area {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.country_area > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 84px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.country_area > div {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.time_area {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.time_area > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 84px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.time_area > div {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.content_area {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.content_area > span {
+	position: absolute;
+	padding: 10px;
+	padding-right: 108px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+	height: 300px;
+	line-height: 255px;
+}
+
+#movie_content {
+	line-height: 1.8;
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+	height: 300px;
+	overflow: auto;
+}
+
+.genre_area button, .director_area button, .actor_area button {
+	outline: none;
+	border: none;
+	height: 30px;
+	width: 30px;
+	font-size: 15px;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+#actor button, #director button, #genre button {
+	outline: none;
+	border: none;
+	height: 20px;
+    width: 20px;
+    font-size: 10px;
+}
+
+.genre_area, .director_area, .actor_area{
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.genre_area > span, .director_area > span, .actor_area > span{
+	position: absolute;
+	padding: 10px;
+	padding-right: 108px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.selected_genre, .selected_director, .selected_actor {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.director_count, .actor_count, .genre_count{
+	float: left;
+	border: 1px solid white;
+	margin-top: -26px;
+    padding-bottom: 5px;
+}
+
+.actor_name, .director_name, .genre_name {
+	float: left;
+	margin-top: 4px;
+	
+}
+
+#actor:nth-child(1), #director:nth-child(1), #genre:nth-child(1) {
+	margin-left: 70px;
+}
+
+.select_area {
+	margin-left: 280px;
+	font-size: 14px;
+	margin-top: -1px;
+}
+
+.select_area > span {
+	position: absolute;
+	padding: 13px;
+	padding-right: 77px;
+	background-color: #333333;
+	color: white;
+	border: 1px solid #4e4e4e;
+}
+
+.sel_movie_screen > span {
+	padding-right: 65px;
+}
+
+.select_area > div {
+	margin-left: 145px;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid #d0d0d0;
+	color: #333;
+}
+
+.img_area {
+	padding-left: 55px;
+	padding-top: 20px;
+}
+
+.btn_area {
+	margin-top: 50px;
+	margin-right: -35px;
+	float: right;
+}
+
+.btn_area > button {
+	height: 27px;
+	width: 50px;
+}
+
+#movie_modify {
+	float: left;
+	text-align: center;
+	line-height: 2;
+	height: 25px;
+	width: 50px;
+	font-size: 14px;
+	background-color: #333;
+	color: white;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 10%;
+	margin-right: 10px;
+}
+
+#movie_modify > a {
+	display: inline-block;
+	text-decoration: none;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+
+#movie_delete {
+	float: left;
+	text-align: center;
+	line-height: 2;
+	height: 25px;
+	width: 50px;
+	font-size: 14px;
+	background-color: #cc1a10;
+	color: white;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 10%;
+	margin-right: 10px;
+}
+
+#movie_cancel {
+	background-color: #eaeaea;
+	color: #333;
+	cursor: pointer;
+	border: 1px solid #d0d0d0;
+	border-radius: 10%;
+	font-size: 14px;
+}
+
+#movie_modify:hover, #movie_delete:hover, #movie_cancel:hover {
+	opacity: 0.5;
+}
+
+#save{
+	background-color: black;
+	color: white;
+}
+
+#cancel {
+	background-color: white;
+	color: black;
+}

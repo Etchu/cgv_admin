@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.MovieImageMapper">
+	<insert id="insertMovieImage">
+		INSERT INTO cm_info_image(cmii_name, cmii_real_path, cmii_uri, cmii_size, cmii_movie_seq)
+		VALUES (#{cmii_name}, #{cmii_real_path}, #{cmii_uri}, #{cmii_size}, #{cmii_movie_seq});
+	</insert>
+	<select id="selectMovieImage" resultType="com.cgv.vo.MovieImageVO">
+		SELECT * FROM cm_info_image WHERE cmii_uri=#{uri}
+		ORDER BY cmii_seq DESC LIMIT 1
+	</select>
+	<select id="selectMovieImageURI" resultType="java.lang.String">
+		SELECT cmii_uri AS uri FROM cm_info_image WHERE cmii_movie_seq=#{seq}
+		ORDER BY cmii_seq DESC LIMIT 1
+	</select>
+	<select id="selectMovieImageName" resultType="java.lang.String">
+		SELECT cmii_name AS name FROM cm_info_image WHERE cmii_movie_seq=#{seq}
+		ORDER BY cmii_seq DESC LIMIT 1
+	</select>
+	
+</mapper>

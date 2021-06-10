@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.MemberMapper">
+	<select id="loginMember" resultType="java.lang.Boolean">
+		SELECT COUNT(*)
+		FROM cm_member
+		WHERE cmm_id=#{id} AND cmm_pwd=#{pwd} AND cmm_type=0
+	</select>
+	<select id="selectMembers" resultType="com.cgv.vo.MemberVO">
+		SELECT *
+		FROM cm_member
+		ORDER BY cmm_reg_date DESC
+		LIMIT 10 OFFSET #{offset}
+	</select>
+	
+	<select id="selectMemberCount" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM cm_member
+	</select>
+	
+	<update id="updateMemberInfo">
+		UPDATE cmm_member
+		SET cmm_status=#{status}, cmm_type=#{type}, cmm_grade=#{grade}
+		WHERE cmm_seq=${seq}
+	</update>
+	
+	<delete id="deleteMember">
+		DELETE FROM cm_member
+		WHERE cmm_seq=#{seq}
+	</delete>
+</mapper>

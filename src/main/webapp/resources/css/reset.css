@@ -1,0 +1,105 @@
+/* reset.css */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@charset "utf-8";
+
+@font-face{
+  font-family: 'CJONLYONENEW';
+  font-style: normal;
+  font-weight: 300;
+  src: local('CJ ONLYONE NEW body Light'), local('CJ ONLYONE NEW body-Light'), local('CJONLYONENEWbodyLight');
+  src: url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Light_2350.eot'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Light_2350.eot?#iefix') format('embedded-opentype'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Light_2350.woff2') format('woff2'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Light_2350.woff') format('woff'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Light_2350.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'CJONLYONENEW';
+  font-style: normal;
+  font-weight: 400;
+  src: local('CJ ONLYONE NEW body Regular'), local('CJ ONLYONE NEW body-Regular'), local('CJONLYONENEWbodyRegular');
+  src: url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Regular_2350.eot'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Regular_2350.eot?#iefix') format('embedded-opentype'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Regular_2350.woff2') format('woff2'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Regular_2350.woff') format('woff'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_body_Regular_2350.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'CJONLYONENEW';
+  font-style: normal;
+  font-weight: 500;
+  src: local('CJ ONLYONE NEW title Medium'), local('CJ ONLYONE NEW title-Medium'), local('CJONLYONENEWtitleMedium');
+  src: url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Medium_2350.eot'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Medium_2350.eot?#iefix') format('embedded-opentype'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Medium_2350.woff2') format('woff2'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Medium_2350.woff') format('woff'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Medium_2350.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'CJONLYONENEW';
+  font-style: normal;
+  font-weight: 700;
+  src: local('CJ ONLYONE NEW title Bold'), local('CJ ONLYONE NEW title-Bold'), local('CJONLYONENEWtitleBold');
+  src: url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Bold_2350.eot'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Bold_2350.eot?#iefix') format('embedded-opentype'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Bold_2350.woff2') format('woff2'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Bold_2350.woff') format('woff'),
+       url('https://img.cgv.co.kr/R2014/fonts/CJ_ONLYONE_NEW_title_Bold_2350.ttf') format('truetype');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,	
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: 'CJONLYONENEW', '¸¼Àº °íµñ', 'µ¸¿ò', Dotum, sans-serif;;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ³» È­¸é Å©±â */
+body {min-width: 1349px;}
+
+
+

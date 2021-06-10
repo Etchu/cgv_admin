@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.GenreMapper">
+	
+	<insert id="insertGenre">
+		INSERT INTO cm_genre(cmg_name)
+		VALUES (#{cma_name})
+	</insert>
+	
+	<select id="selectGenreCntByName" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM cm_genre
+		WHERE cmg_name=#{cmg_name}
+	</select>
+	
+	<delete id="deleteGenre">
+		DELETE FROM cm_genre
+		WHERE cmg_seq=#{cmg_seq}
+	</delete>
+	
+	<update id="updateGenre">
+		UPDATE cm_genre
+		SET cmg_name=#{cmg_name}
+		WHERE cmg_seq=#{cmg_seq}
+	</update>
+	
+	<select id="selectGenreList" resultType="com.cgv.vo.GenreVO">
+		SELECT *
+		FROM cm_genre
+	</select>
+	
+	<select id="selectGenrePopupList" resultType="com.cgv.vo.GenreVO">
+		SELECT *
+		FROM cm_genre
+		WHERE cmg_name LIKE #{keyword}
+	</select>
+	
+	<select id="selectGenreBySeq" resultType="com.cgv.vo.GenreVO">
+		SELECT cmg_seq, cmg_name
+		FROM cm_genre
+		WHERE cmg_seq=#{cmg_seq}
+	</select>
+	
+	<insert id="insertGenreInMovie">
+		INSERT INTO cm_info_genre(cmig_info_seq, cmig_genre_seq)
+		VALUES (#{cmig_info_seq}, #{cmig_genre_seq})
+	</insert>
+	
+	<select id="selectGenreByMovieSeq" resultType="com.cgv.vo.GenreVO">
+    	SELECT b.cmg_seq, b.cmg_name 
+		FROM cm_information a
+		INNER JOIN cm_info_genre bb
+		ON a.cmi_seq = bb.cmig_info_seq
+		INNER JOIN cm_genre b
+		ON bb.cmig_genre_seq = b.cmg_seq
+		WHERE a.cmi_seq = #{seq}
+    </select>
+    
+    <delete id="deleteMovieInGenre">
+    	DELETE FROM cm_info_genre
+    	WHERE cmig_info_seq = #{seq}
+    </delete>
+	
+</mapper>

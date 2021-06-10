@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.DirectorMapper">
+
+	<insert id="insertDirector">
+		INSERT INTO cm_director(cmd_name, cmd_content)
+		VALUES (#{cmd_name}, #{cmd_content})
+	</insert>
+	
+	<select id="selectDirectorCntByName" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM cm_director
+		WHERE cmd_name=#{cmd_name}
+	</select>
+	
+	<delete id="deleteDirector">
+		DELETE FROM cm_director
+		WHERE cmd_seq=#{cmd_seq}
+	</delete>
+	
+	<update id="updateDirector">
+		UPDATE cm_director
+		SET cmd_name=#{cmd_name}, cmd_content=#{cmd_content}
+		WHERE cmd_seq=#{cmd_seq}
+	</update>
+	
+	<select id="selectDirectorList" resultType="com.cgv.vo.DirectorVO">
+		SELECT *
+		FROM cm_director
+	</select>
+	
+	<select id="selectDirectorPopupList" resultType="com.cgv.vo.DirectorVO">
+		SELECT *
+		FROM cm_director
+		WHERE cmd_name LIKE #{keyword}
+	</select>
+	
+	<select id="selectDirectorBySeq" resultType="com.cgv.vo.DirectorVO">
+		SELECT cmd_seq, cmd_name
+		FROM cm_director
+		WHERE cmd_seq=#{cmd_seq}
+	</select>
+	
+	<insert id="insertDirectorInMovie">
+		INSERT INTO cm_info_director(cmid_info_seq, cmid_director_seq)
+		VALUES (#{cmid_info_seq}, #{cmid_director_seq})
+	</insert>
+	
+	<select id="selectDirectorByMovieSeq" resultType="com.cgv.vo.DirectorVO">
+    	SELECT b.cmd_seq, b.cmd_name 
+		FROM cm_information a
+		INNER JOIN cm_info_director bb
+		ON a.cmi_seq = bb.cmid_info_seq
+		INNER JOIN cm_director b
+		ON bb.cmid_director_seq = b.cmd_seq
+		WHERE a.cmi_seq = #{seq}
+    </select>
+    
+    <delete id="deleteMovieInDirector">
+    	DELETE FROM cm_info_director
+    	WHERE cmid_info_seq = #{seq}
+    </delete>
+	
+</mapper>

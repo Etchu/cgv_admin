@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgv.mapper.ActorMapper">
+
+	<insert id="insertActor">
+		INSERT INTO cm_actor(cma_name, cma_content)
+		VALUES (#{cma_name}, #{cma_content})
+	</insert>
+	
+	<select id="selectActorCntByName" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM cm_actor
+		WHERE cma_name=#{cma_name}
+	</select>
+	
+	<delete id="deleteActor">
+		DELETE FROM cm_actor
+		WHERE cma_seq=#{cma_seq}
+	</delete>
+	
+	<update id="updateActor">
+		UPDATE cm_actor
+		SET cma_name=#{cma_name}, cma_content=#{cma_content}
+		WHERE cma_seq=#{cma_seq}
+	</update>
+	
+	<!-- 배우게시판의 배우 리스트를 보여줌 -->
+	<select id="selectActorList" resultType="com.cgv.vo.ActorVO">
+		SELECT *
+		FROM cm_actor
+	</select>
+	
+	<select id="selectActorPopupList" resultType="com.cgv.vo.ActorVO">
+		SELECT *
+		FROM cm_actor
+		WHERE cma_name LIKE #{keyword}
+	</select>
+	
+	<select id="selectActorBySeq" resultType="com.cgv.vo.ActorVO">
+		SELECT cma_seq, cma_name
+		FROM cm_actor
+		WHERE cma_seq=#{cma_seq}
+	</select>
+	
+	<insert id="insertActorInMovie">
+		INSERT INTO cm_info_actor(cmia_info_seq, cmia_actor_seq)
+		VALUES (#{cmia_info_seq}, #{cmia_actor_seq})
+	</insert>
+	
+	<select id="selectActorByMovieSeq" resultType="com.cgv.vo.ActorVO">
+    	SELECT b.cma_seq, b.cma_name 
+		FROM cm_information a
+		INNER JOIN cm_info_actor bb
+		ON a.cmi_seq = bb.cmia_info_seq
+		INNER JOIN cm_actor b
+		ON bb.cmia_actor_seq = b.cma_seq
+		WHERE a.cmi_seq = #{seq}
+    </select>
+    
+    <delete id="deleteMovieInActor">
+    	DELETE FROM cm_info_actor
+    	WHERE cmia_info_seq = #{seq}
+    </delete>
+	
+</mapper>

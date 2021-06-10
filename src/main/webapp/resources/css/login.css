@@ -1,0 +1,62 @@
+body {
+	background-color:  #fdfcf0;
+}
+
+#login_wrap {
+	padding: 20px;
+	top: 37%;
+    left: 42%;
+    position: absolute;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+}
+
+.logo > p {
+	float: right;
+	margin-top: 25px;
+	font-weight: bold;
+}
+
+.id {
+	margin-top: 10px;
+	padding-left: 5px;
+	border: 3px solid #cccccc;
+	background-color: white;
+	font-weight: bold;
+	color: #808080;
+	font-size: 14px;
+}
+
+.id > input {
+	background-color: white;
+	border: 1px solid white;
+	height: 30px;
+}
+
+.pwd {
+	margin-top: 10px;
+	padding-left: 5px;
+	border: 3px solid #cccccc;
+	background-color: white;
+	font-weight: bold;
+	color: #808080;
+	font-size: 14px;
+}
+
+.pwd > input {
+	background-color: white;
+	border: 1px solid white;
+	height: 30px;
+}
+
+#login_btn {
+	width: 100%;
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+	height: 30px;
+	font-weight: bold;
+	margin-top: 10px;
+	font-size: 16px;
+	cursor: pointer;
+}
